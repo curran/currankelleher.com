@@ -1,0 +1,89 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<div class="stars"></div>
+		<div class="content">
+			<slot />
+		</div>
+	</body>
+</html>
+<style is:global>
+	:root {
+		--accent: 56, 189, 248;
+		--accent-light: 186, 230, 253;
+		--accent-dark: 8, 47, 73;
+		--accent-gradient: linear-gradient(
+			45deg,
+			rgb(var(--accent)),
+			rgb(var(--accent-light)) 30%,
+			rgba(255, 255, 255, 0.8) 60%
+		);
+		--neon-glow: 0 0 5px rgba(56, 189, 248, 0.5),
+					 0 0 10px rgba(56, 189, 248, 0.3),
+					 0 0 15px rgba(56, 189, 248, 0.1);
+	}
+	html {
+		font-family: 'Space Grotesk', system-ui, sans-serif;
+		background: #0a0f14;
+		color: #ffffff;
+	}
+	body {
+		margin: 0;
+		min-height: 100vh;
+		position: relative;
+		overflow-x: hidden;
+	}
+	.stars {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+		background-image: 
+			radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+			radial-gradient(2px 2px at 40px 70px, #ffffff, rgba(0,0,0,0)),
+			radial-gradient(2px 2px at 50px 160px, #ffffff, rgba(0,0,0,0)),
+			radial-gradient(2px 2px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+			radial-gradient(2px 2px at 130px 80px, #ffffff, rgba(0,0,0,0));
+		background-size: 200px 200px;
+		animation: stars 8s linear infinite;
+		opacity: 0.3;
+	}
+	.content {
+		position: relative;
+		z-index: 1;
+	}
+	@keyframes stars {
+		0% { transform: translateY(0); }
+		100% { transform: translateY(-200px); }
+	}
+	code {
+		font-family: 'Fira Code', monospace;
+		font-feature-settings: "liga" 1;
+	}
+	a {
+		color: rgb(var(--accent-light));
+		text-decoration: none;
+	}
+	a:hover {
+		color: rgb(var(--accent));
+	}
+</style>

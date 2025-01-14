@@ -1,0 +1,79 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+
+const latestPosts = await Astro.glob('./blog/*.md');
+latestPosts.sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date));
+---
+
+<Layout title="Curran Kelleher - Data Visualization Expert">
+	<main>
+		<h1><span class="text-gradient">Welcome to My Blog</span></h1>
+		<p class="instructions">
+			Exploring the art and science of data visualization through code, design, and analysis.
+		</p>
+		<ul role="list" class="link-card-grid">
+			<Card
+				href="/blog"
+				title="Blog Posts"
+				body="Read my latest thoughts and tutorials on data visualization."
+			/>
+			<Card
+				href="https://github.com/curran"
+				title="GitHub"
+				body="Check out my open source projects and contributions."
+			/>
+			<Card
+				href="https://twitter.com/currankelleher"
+				title="Twitter"
+				body="Follow me for updates and insights on data visualization."
+			/>
+			<Card
+				href="https://observablehq.com/@curran"
+				title="Observable"
+				body="Interactive notebooks and live coding examples."
+			/>
+		</ul>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1.5rem;
+		width: 800px;
+		max-width: calc(100% - 3rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	h1 {
+		font-size: clamp(2.5rem, 5vw, 4rem);
+		font-weight: 700;
+		line-height: 1.2;
+		text-align: center;
+		margin-bottom: 1em;
+		padding: 0 1rem;
+	}
+	.instructions {
+		margin-bottom: 2rem;
+		border: 1px solid rgba(var(--accent-light), 25%);
+		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
+		padding: 1.5rem;
+		border-radius: 8px;
+		text-align: center;
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 2rem;
+		padding: 0;
+	}
+</style>

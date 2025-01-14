@@ -1,0 +1,122 @@
+---
+import Layout from './Layout.astro';
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.title}>
+  <article class="blog-post">
+    <nav class="back-nav">
+      <a href="/blog" class="back-link">← Back to Posts</a>
+    </nav>
+    <div class="header">
+      <h1>{frontmatter.title}</h1>
+      {frontmatter.date && (
+        <time>
+          {new Date(frontmatter.date).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          })}
+        </time>
+      )}
+    </div>
+    <div class="content">
+      <slot />
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .blog-post {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    color: #ffffff;
+  }
+
+  .back-nav {
+    margin-bottom: 2rem;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background: rgba(var(--accent), 0.1);
+    border-radius: 8px;
+  }
+
+  .back-link:hover {
+    background: rgba(var(--accent), 0.2);
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(var(--accent), 0.2);
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+  }
+
+  time {
+    color: rgb(var(--accent-light));
+    font-size: 0.9rem;
+  }
+
+  .content {
+    line-height: 1.8;
+  }
+
+  :global(.content h2) {
+    color: rgb(var(--accent-light));
+    font-size: 1.8rem;
+    margin: 2.5rem 0 1.5rem;
+  }
+
+  :global(.content p) {
+    margin: 1.5rem 0;
+  }
+
+  :global(.content pre) {
+    background: rgba(13, 13, 17, 0.95);
+    padding: 1.5rem;
+    border-radius: 10px;
+    overflow-x: auto;
+    border: 1px solid rgba(var(--accent), 0.2);
+    margin: 2rem 0;
+    box-shadow: var(--neon-glow);
+    font-family: 'Fira Code', monospace;
+    font-feature-settings: "liga" 1;
+  }
+
+  :global(.content code) {
+    font-family: 'Fira Code', monospace;
+    font-feature-settings: "liga" 1;
+    color: rgb(var(--accent-light));
+  }
+
+  :global(.content ul) {
+    list-style-type: none;
+    padding-left: 1.5rem;
+  }
+
+  :global(.content li) {
+    position: relative;
+    margin: 0.8rem 0;
+  }
+
+  :global(.content li::before) {
+    content: "→";
+    color: rgb(var(--accent));
+    position: absolute;
+    left: -1.5rem;
+  }
+</style>
