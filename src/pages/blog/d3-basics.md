@@ -7,6 +7,8 @@ description: "A brief introduction to D3.js and Web Technologies"
 
 D3.js is a powerful JavaScript library for interactive data visualizaion. It's a great tool for creating custom visualizations that are not possible with off-the-shelf charting libraries. D3.js is a low-level library that provides a set of primitives for creating visualizations. It's not a charting library like Chart.js or Highcharts. Instead, D3.js provides a set of building blocks that you can use to create custom visualizations. In this post, I'll show you one way to get started with D3.js.
 
+<iframe src="../examples/d3-basics/index.html" width="100%" height="500px"></iframe>
+
 ## Setting up a Development Environment
 
 There are many ways to start a JavaScript project. Since my focus is on teaching D3 and visualization to a wide audience who may not be familiar with the JavaScript ecosystem, I prefer to use Vanilla JS and a simple HTML file to get started. Even within that paradigm, there are various ways to include the D3 library. My preference is to fully leverage the latest version of JavaScript modules called ES Modules. That way, you can write code that lives in multiple files, and you can import and export functions between those files. Here's how you can set up a simple project with D3.js using ES Modules.
@@ -45,6 +47,8 @@ In this particular `index.html`, the things leading up to `<title>` are just sta
 
 ## Filling the Entire Page
 
+We want to occupy the full width and height of the page. Here's one way to do that with CSS:
+
 **styles.css**
 
 ```css
@@ -66,6 +70,12 @@ The content of `styles.css` is some CSS that makes the `#viz-container` element 
 
 ## Orchestrating the Rendering Logic
 
+We need to orchestrate and connect the following:
+
+- The data
+- The top-level SVG element
+- The circles to render within that element
+
 **index.js**
 
 ```javascript
@@ -82,6 +92,8 @@ export const main = (container) => {
 The `index.js` file is the entry point for the JavaScript code. It serves to orchestrate the entire flow of the application and connect all the pieces together. This module imports the `data` array from the `data.js` file, the `renderSVG` function from the `renderSVG.js` file, and the `renderCircles` function from the `renderCircles.js` file. It then exports a `main` function that takes a `container` DOM element as an argument. The `main` function calls the `renderSVG` function with the `container` element to create an SVG element, and then calls the `renderCircles` function with the SVG element and the `data` array to render circles on the SVG.
 
 ## The Top-Level SVG Element
+
+To use SVG, we need to define a single element that will contain all the other elements, namely the circles.
 
 **renderSVG.js**
 
@@ -108,6 +120,8 @@ Finhally, the `style` function is used to set the `background` style of the SVG 
 
 ## Defining the Data
 
+The data for this example is defined as an array of objects that represent circles to render on the SVG.
+
 **data.js**
 
 ```javascript
@@ -125,6 +139,8 @@ export const data = [
 The module defined in `data.js` exports an array of objects that represent circles to be rendered on the SVG. Each object has `x`, `y`, `r`, and `fill` properties that define the position, radius, and fill color of the circle. While this example has a direct correspondence to the circles to render, in a real-world application, the data would likely come from an external source, such as a CSV file or an API, and would then be transformed to pixel coordinates and colors using D3 scales. In any case, the most common pattern in D3.js is to represent data as an array of objects, where each object represents a "data point" or "row in a table".
 
 ## Rendering Circles
+
+The final piece of the puzzle is the rendering logic that creates the circles on the SVG.
 
 **renderCircles.js**
 
@@ -150,3 +166,16 @@ Again we use the data join incantation of `selectAll`, `data`, and `join` to cre
 The `cx` and `cy` attributes define the center of the circle, the `r` attribute defines the radius of the circle, and the `fill` attribute defines the fill color of the circle. The `opacity` attribute defines the opacity of the circle as a constant. The `opacity` attribute is set to `700 / 1000` to make the circles slightly transparent. Making the shapes semi-transparent like this gives more visibility into overlaps and density. It's a technique I like to use often.
 
 The value `700 / 1000` is odd, I know. It's like that so that in VizHub, you can use the VZCode "interactive widgets" feature to hold Alt + drag on the `700` to manipulate it smoothly with instant feedback based on hot reloading. I personally think that's the coolest thing ever - the ability to get truly instant feedback when tweaking visual parameters like opacity. The fraction approach is a bit of a workaround for the fact that you only get integer resolution when dragging the number. Adjusting the number of zeros in the fraction is a way to get more or less precision when dragging the number. It's a bit of a hack, but it works well in practice.
+
+## Takeaways
+
+My point with this article is to express my strongly opinionated view on how to approach interactive visualization development with D3. My opinions are:
+
+- Embrace Web Standards
+- Use ES Modules for code organization
+- Avoid quirky frameworks for core functionality
+- Always write idempotent rendering logic
+- Use functional patterns for rendering logic
+- Use inline styles for maximum portability
+
+This is to lay the foundation for what's coming next: a series of articles that build on this foundation to create more complex and interactive visualizations. I hope you find this approach useful and that it helps you get started with D3.js. Stay tuned for more articles on D3.js and Web technologies!
