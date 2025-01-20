@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogPost.astro
 title: "Hello, World"
-date: "2024-01-14"
+date: "2025-01-14"
 description: ""
 ---
 
@@ -28,4 +28,3 @@ I returned to client services once again, working on projects for several client
 In September 2024 I took a full time job with a cybersecurity startup called Exaforce. One thing that excites me about this role is that I have the opportunity to contribute to the industrial-strength open source project [Unovis](https://unovis.dev/). This project implements various visualization techniques in such a way that they can be wrapped as components in multiple frameworks, a notion near and dear to my heart. So far it's been a great experience, and I'm learning a lot about what it takes to build and refine an enterprise software offering.
 
 Anyway, I wanted to create this blog to have a creative outlet and get feedback on my public work. In particular, I plan to build out a unified approach for D3 visualization development based on my most recent course in [YouTube: Constructing Visualizations 2024](https://www.youtube.com/watch?v=bZhWCO-bDek&list=PL9yYRbwpkykthTFJl9vYr_C0FCjRIn_7G). I've been fixated on VizHub for the past few years, but I'm feeling like it's time to move on and embrace core technologies and reduce dependencies as much as possible. I feel like it's important to just get into some sort of creative flow on a regular basis, and share what I've learned over 20 years of dataviz work for the benefit of all.
-

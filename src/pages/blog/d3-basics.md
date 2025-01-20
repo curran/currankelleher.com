@@ -1,13 +1,13 @@
 ---
 layout: ../../layouts/BlogPost.astro
 title: "Getting Started with D3.js"
-date: "2024-01-16"
+date: "2025-01-20"
 description: "A brief introduction to D3.js and Web Technologies"
 ---
 
 D3.js is a powerful JavaScript library for interactive data visualizaion. It's a great tool for creating custom visualizations that are not possible with off-the-shelf charting libraries. D3.js is a low-level library that provides a set of primitives for creating visualizations. It's not a charting library like Chart.js or Highcharts. Instead, D3.js provides a set of building blocks that you can use to create custom visualizations. In this post, I'll show you one way to get started with D3.js.
 
-<iframe src="../examples/d3-basics/index.html" width="100%" height="500px"></iframe>
+<iframe src="/examples/d3-basics/index.html" width="100%" height="400px" style="border: none; border-radius: 4px;"></iframe>
 
 ## Setting up a Development Environment
 
