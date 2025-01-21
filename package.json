@@ -6,11 +6,13 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build:examples": "node ./buildExamples.js",
+    "build": "npm run build:examples && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.1.6"
+    "astro": "^5.1.8",
+    "llm-code-format": "^0.1.2"
   }
 }

@@ -9,6 +9,8 @@ D3.js is a powerful JavaScript library for interactive data visualizaion. It's a
 
 <iframe src="/examples/d3-basics/index.html" width="100%" height="400px" style="border: none; border-radius: 4px;"></iframe>
 
+[source code](https://github.com/curran/currankelleher.com/tree/main/public/examples/d3-basics)
+
 ## Setting up a Development Environment
 
 There are many ways to start a JavaScript project. Since my focus is on teaching D3 and visualization to a wide audience who may not be familiar with the JavaScript ecosystem, I prefer to use Vanilla JS and a simple HTML file to get started. Even within that paradigm, there are various ways to include the D3 library. My preference is to fully leverage the latest version of JavaScript modules called ES Modules. That way, you can write code that lives in multiple files, and you can import and export functions between those files. Here's how you can set up a simple project with D3.js using ES Modules.
