@@ -7,7 +7,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build:examples": "node ./buildExamples.js",
-    "build": "npm run build:examples && astro build",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
