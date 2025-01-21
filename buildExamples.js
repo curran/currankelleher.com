@@ -23,6 +23,10 @@ fs.readdirSync(blogDir)
     }
     fs.mkdirSync(outputDirectory);
     files.forEach(({ name, text }) => {
+      // Sometimes it gets the parsing wrong
+      // and tries to use ridiculous file names
+      if (text.length > 100) return;
+
       fs.writeFileSync(path.join(outputDirectory, name), text);
     });
   });
