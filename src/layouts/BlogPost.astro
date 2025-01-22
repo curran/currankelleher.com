@@ -75,6 +75,10 @@ const { frontmatter } = Astro.props;
     line-height: 1.8;
   }
 
+  :global(summary) {
+    cursor: pointer;
+  }
+
   :global(.content h2) {
     color: rgb(var(--accent-light));
     font-size: 1.8rem;

@@ -1,0 +1,4 @@
+const { files } = parseMarkdownFiles(markdownString);
+files.forEach(({ name, text }) => {
+  fs.writeFileSync(path.join(outputDirectory, name), text);
+});
