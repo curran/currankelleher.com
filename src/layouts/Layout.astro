@@ -15,7 +15,9 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<div class="stars"></div>
@@ -40,9 +42,10 @@ const { title } = Astro.props;
 					 0 0 15px rgba(56, 189, 248, 0.1);
 	}
 	html {
-		font-family: 'Space Grotesk', system-ui, sans-serif;
+		font-family: 'Roboto', system-ui, sans-serif;
 		background: #0a0f14;
 		color: #ffffff;
+		font-size: 18px;
 	}
 	body {
 		margin: 0;
@@ -76,8 +79,10 @@ const { title } = Astro.props;
 		100% { transform: translateY(-200px); }
 	}
 	code {
-		font-family: 'Fira Code', monospace;
-		font-feature-settings: "liga" 1;
+		font-family: "JetBrains Mono", monospace;
+		font-optical-sizing: auto;
+		font-variant-ligatures: normal;
+		font-feature-settings: "liga" 1, "calt" 1;
 	}
 	a {
 		color: rgb(var(--accent-light));

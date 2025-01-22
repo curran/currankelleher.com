@@ -75,7 +75,7 @@ export const main = (container, { state, setState }) => {
 };
 ```
 
-The `main` function takes a `container` DOM element as an argument, and an object that contains the `state` and `setState` functions. The `main` function then calls the `renderSVG` function with the `container` element to create an SVG element, and then calls the `renderCircles` function with the SVG element, the `data` array, and the `state` and `setState` functions to render circles on the SVG.
+The `main` function takes a `container` DOM element as an argument, and an object that contains the `state` and `setState` functions. The `main` function then calls the `renderSVG` function with the `container` element to create an SVG element, and then calls the `clickableCircles` function with the SVG element, the `data` array, and the `state` and `setState` functions to render circles on the SVG. This is how we can give access to the state and the ability to update the state to nested functions.
 
 ## Making Circles Clickable
 
@@ -85,6 +85,23 @@ The goal is to make it so when you click on a circle, it becomes highlighted. Th
 - Add an event listener to the circles to respond to click events
 - Update the state when a circle is clicked
 - Update the rendering logic to highlight the clicked circle
+
+**renderCircles.js**
+
+```javascript
+export const renderCircles = (svg, { data, state, setState }) =>
+  svg
+    .selectAll("circle")
+    .data(data)
+    .join("circle")
+    .attr("cx", (d) => d.x)
+    .attr("cy", (d) => d.y)
+    .attr("r", (d) => d.r)
+    .attr("fill", (d) => d.fill)
+    .attr("opacity", 700 / 1000);
+```
+
+The `renderCircles` function from the [previous post](../d3-basics) remains unchanged. It is shown here for reference. Note that it returns the selection implicitly, which allows us to work with it in downstream code.
 
 **clickableCircles.js**
 
@@ -118,21 +135,6 @@ In this article, we covered the basics of state management for interactive graph
 
 <details>
 <summary>Full code listing</summary>
-
-**renderCircles.js**
-
-```javascript
-export const renderCircles = (svg, { data, state, setState }) =>
-  svg
-    .selectAll("circle")
-    .data(data)
-    .join("circle")
-    .attr("cx", (d) => d.x)
-    .attr("cy", (d) => d.y)
-    .attr("r", (d) => d.r)
-    .attr("fill", (d) => d.fill)
-    .attr("opacity", 700 / 1000);
-```
 
 **styles.css**
 
