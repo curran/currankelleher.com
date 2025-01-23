@@ -11,22 +11,6 @@
   </head>
   <body>
     <div id="viz-container"></div>
-    <script type="module">
-      import { main } from "./index.js";
-      const container = document.getElementById("viz-container");
-
-      let state = {};
-
-      const setState = (next) => {
-        state = next(state);
-        render();
-      };
-
-      const render = () => {
-        main(container, { state, setState });
-      };
-
-      render();
-    </script>
+    <script type="module" src="./setup.js"></script>
   </body>
 </html>

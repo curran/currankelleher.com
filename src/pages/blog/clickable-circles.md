@@ -31,28 +31,32 @@ The state management pattern I like to use is a unidirectional data flow pattern
   </head>
   <body>
     <div id="viz-container"></div>
-    <script type="module">
-      import { main } from "./index.js";
-      const container = document.getElementById("viz-container");
-
-      let state = {};
-
-      const setState = (next) => {
-        state = next(state);
-        render();
-      };
-
-      const render = () => {
-        main(container, { state, setState });
-      };
-
-      render();
-    </script>
+    <script type="module" src="./setup.js"></script>
   </body>
 </html>
 ```
 
 Here is an implementation of unidirectional data flow that is extremly small and simple, yet powerful enough for us to get started. The `index.html` file is the entry point for the application. It imports the `main` function from the `index.js` file, and then sets up the state management logic. The imported `main` function is then called with the container element (as in the [previous post](../d3-basics)), but this time with a second argument that contains the `state` and `setState` functions.
+
+**setup.js**
+
+```javascript
+import { main } from "./index.js";
+const container = document.getElementById("viz-container");
+
+let state = {};
+
+const setState = (next) => {
+  state = next(state);
+  render();
+};
+
+const render = () => {
+  main(container, { state, setState });
+};
+
+render();
+```
 
 The `state` object is used to store the state of the application (initially an empty object), and the `setState` function is used to update the state and re-render the application. The `render` function is called to render the application for the first time, and then the `main` function is called to render the application, passing in the latest state. This pattern of calling `main` with the latest state and `setState` function is what enables the unidirectional data flow pattern.
 
