@@ -146,6 +146,8 @@ export const renderCircles = (svg, { data, width, height }) => {
 
 Here we define two instances of `scaleLinear`: `xScale` and `yScale`. Both have a fixed _domain_, which is the space of data values passed in. The _range_ represents the coordinate space to project into, which is set dynamically based on the passed in `width` and `height`. When the `cx` and `xy` attributes are set, we pass the raw data values through the scales as functions, which projects them from the domain to the range using linear interpolation.
 
+See also [Svelte + D3: Scales and responsive visualizations](https://www.youtube.com/watch?v=FxIl_o48sJo&list=PLNvnDrMLMSipfbxSp1Z4v9Ydu2ud5i9V8&index=2), an excellent tutorial by [Dr. Matthias Stahl](https://www.higsch.com/about/) that inspired the design of this example.
+
 **clickableCircles.js**
 
 ```javascript
