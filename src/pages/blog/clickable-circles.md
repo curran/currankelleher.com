@@ -7,6 +7,8 @@ description: "Introduction to state management for interactive graphics"
 
 One of the strong points of D3.js is that it enables you to create arbitrarily complex and custom _interactions_. D3 provides low-level primitives for dealing with interaction events and rendering updates, but _does not_ prescribe a particular way to manage state. This is a good thing, because it allows you to use the state management approach that is most appropriate for your particular application. In this article, I'll show you how to create a simple example of clickable circles using D3.js, using my own personal favorite state management pattern: unidirectional data flow. This example will serve as a foundation for future articles that explore more complex interactions and state management patterns.
 
+> Click a circle to try it out!
+
 <iframe src="/examples/clickable-circles/index.html" width="100%" height="400px" style="border: none; border-radius: 4px;"></iframe>
 
 [source code](https://github.com/curran/currankelleher.com/tree/main/public/examples/clickable-circles)
@@ -93,7 +95,7 @@ The goal is to make it so when you click on a circle, it becomes highlighted. Th
 **renderCircles.js**
 
 ```javascript
-export const renderCircles = (svg, { data, state, setState }) =>
+export const renderCircles = (svg, { data }) =>
   svg
     .selectAll("circle")
     .data(data)
