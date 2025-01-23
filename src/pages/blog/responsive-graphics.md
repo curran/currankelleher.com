@@ -9,7 +9,7 @@ Responsiveness is table stakes.
 
 In today's era, you never know what device someone will be using to view your page or product, or how they set their browser zoom. It's important to make sure your graphics look good and work well on all devices, which the [previous example](../clickable-circles) does not. In order to do this, I usually turn to the [ResizeObserver API](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver) to detect changes in the size of the container element, and then update the graphics accordingly. This is a powerful API that allows you to detect changes in the size of an element, and respond to those changes in a performant way. In this article, I'll show you one way to use the ResizeObserver API and [D3 Scales](https://d3js.org/d3-scale) to create responsive graphics that work well on all devices.
 
-> [open full screnen and resize](/examples/responsive-graphics/index.html) to try it out!
+**[open full screen and resize](/examples/responsive-graphics/index.html) to try it out!**
 
 <iframe src="/examples/responsive-graphics/index.html" width="100%" height="400px" style="border: none; border-radius: 4px;"></iframe>
 
