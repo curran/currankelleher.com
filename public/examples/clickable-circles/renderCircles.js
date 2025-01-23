@@ -1,4 +1,4 @@
-export const renderCircles = (svg, { data, state, setState }) =>
+export const renderCircles = (svg, { data }) =>
   svg
     .selectAll("circle")
     .data(data)
