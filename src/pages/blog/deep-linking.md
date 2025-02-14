@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogPost.astro
 title: "Deep Linking"
-date: "2025-02-14"
+date: "2025-02-15"
 description: "Use URL parameters for sharing dataviz state in D3.js"
 tags:
   ["d3.js", "javascript", "visualization", "state management", "deep linking"]
