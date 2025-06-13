@@ -5,7 +5,7 @@ date: "2025-06-12"
 description: "How artificial intelligence intersects with bespoke dataviz"
 ---
 
-I had the pleasure of running an "unconference" at this year's Outlier conference in Miami. There were ten or so of us sitting around a table discussing AI and code-driven data visualization for about 5 minutes. Everyone shared their takes, and we touched upon so many angles of the topic. I'd like to take some time to write up the discussions we had, since the topic of AI and how it can be used for dataviz work is top of mind for so many data visualization practitioners.
+I had the pleasure of running an "unconference" at this year's Outlier conference in Miami. There were ten or so of us sitting around a table discussing AI and code-driven data visualization for about 45 minutes. Everyone shared their takes, and we touched upon so many angles of the topic. I'd like to take some time to write up the discussions we had, since the topic of AI and how it can be used for dataviz work is top of mind for so many data visualization practitioners.
 
 ## Where to use AI?
 
