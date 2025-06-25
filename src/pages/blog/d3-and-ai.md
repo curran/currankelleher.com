@@ -65,6 +65,6 @@ Among these various points, I can see a few points of fear that are genuinely va
 
 ## AI in VizHub
 
-If you want to try AI for D3.js code editing, one easy way is to try [VizHub Premium](https://vizhub.com/pricing), which has an "Edit with AI" feature built in! This code editing feature is similar to Aider, in that it can re-write the files that need to change. It's much less sophisticated than a tool like Cursor, but might be a good way to "get your feet wet" if you've never tried editing code with AI before.
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/wd6BnelMO9g?si=S8DZ5qfS5AEnCXjm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-Try it for 1 month free using discount code `OUTLIER2025`!
+If you want to try AI for D3.js code editing, one easy way is to try [VizHub Premium](https://vizhub.com/pricing), which has an "Edit with AI" feature built in! This code editing feature is similar to Aider, in that it can re-write the files that need to change. It's much less sophisticated than a tool like Cursor, but might be a good way to "get your feet wet" if you've never tried editing code with AI before. It's super fun and can help you get more done in less time.
