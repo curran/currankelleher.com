@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPost.astro
 title: "Immutable Update Bugs in D3.js"
 date: "2025-06-27"
-description: "Introduction to state management for interactive graphics"
+description: "How to avoid losing selection state when dragging items in D3.js"
 ---
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/RE-ZzByPXDk?si=h0w0fY2D6axSDwWW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
