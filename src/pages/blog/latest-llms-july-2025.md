@@ -19,6 +19,8 @@ Next, I turned to the go-to model, Claude Sonnet 4, known for its consistent and
 
 ## The Creative Mind: Claude 3.7 Sonnet
 
+<iframe src="https://vizhub.com/curran/383c34da85f94da4b9cb92a1ae832eb3?mode=embed&embed=branded" width="960" height="500" scrolling="no" frameborder="no"></iframe>
+
 For a test of pure creativity and aesthetic sense, I tasked Claude 3.7 Sonnet with a fun project: "make a vanilla HTML retro pong game." This model is reputed for its creative flair and understanding of retro styling, and it did not disappoint. Not only did it generate a clean, functional pong game, but it also went the extra mile by adding sound effects. The result was a fully playable and enjoyable retro game, showcasing the model's impressive creative and technical abilities.
 
 ## The Economical Option: DeepSeek Chat V3
@@ -56,4 +58,4 @@ This journey through VizHub's "Edit with AI" feature and its diverse model suppo
 
 ## Conclusion
 
-The power to choose the right AI for the right task is a game-changer. I encourage you to try out these models in VizHub and see which ones best fit your workflow and creative vision. The future of coding is collaborative, and with these AI partners, the possibilities are endless. Let me know which models work best for you!
+The power to choose the right AI for the right task is a game-changer. I encourage you to [try out these models in VizHub](https://vizhub.com/) and see which ones best fit your workflow and creative vision. The future of coding is collaborative, and with these AI partners, the possibilities are endless. Let me know which models work best for you!
