@@ -1,0 +1,7 @@
+Frontend: React / Remix / Next.js
+Auth: Lucia (open) or Clerk (managed)
+Database: Neon (serverless Postgres)
+Storage: Cloudflare R2 or S3
+Server: Node on Fly.io / Render / Fargate
+Infra as Code: Terraform or CDK
+Analytics: PostHog (self-hostable)

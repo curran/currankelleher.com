@@ -167,6 +167,8 @@ You'll move as fast as on Supabase, keep Postgres and JWT as open standards, and
 
 Would you like me to generate a **reference architecture diagram** (like an AWS-style block diagram) for that "Neon + Lucia + Remix + R2" future-proof startup stack? It would show how auth, storage, and database interact cleanly.
 
->yes, please use Mermaid
+> yes, please use Mermaid
 
-TODO insert public/images/saas-infra.png here
+## Reference Architecture: "Neon + Lucia + Remix + R2" Stack
+
+![Future-proof SaaS infrastructure stack diagram](/images/saas-infra.png)
